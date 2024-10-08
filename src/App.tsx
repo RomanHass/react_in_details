@@ -9,6 +9,7 @@ import { UncontrolledRating } from './components/UncontrolledRating/Uncontrolled
 
 function App() {
   console.log('App rendering')
+
   return (
     <div className="App">
       <div style={{margin: '10px', border: '1px solid red'}}>
