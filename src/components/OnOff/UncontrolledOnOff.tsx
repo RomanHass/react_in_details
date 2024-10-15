@@ -1,8 +1,10 @@
 import { useState } from "react";
 
-export const OnOff = () => {
+export const UncontrolledOnOff = () => {
 
   const [on, setOn] = useState(true);
+
+  // console.log('UncontrolledOnOff');
 
   const onStyle = {
     border: '2px solid black',
