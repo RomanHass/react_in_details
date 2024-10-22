@@ -8,7 +8,8 @@ export const Accordion = (props: AccordionPropsType) => {
   return (
     <div>
         <AccordionTitle title={props.titleValue}
-          onClick={() => props.onClick(!props.expanded)} />
+                        onClick={() => props.onClick(!props.expanded)} 
+        />
         {props.expanded && <AccordionBody />}
       </div>
   );

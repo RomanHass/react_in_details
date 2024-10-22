@@ -6,7 +6,7 @@ import { Rating, RatingValueType } from './components/Rating/Rating';
 import { UncontrolledAccordion } from './components/UncontrolledAccordion/UncontrolledAccordion';
 import { UncontrolledRating } from './components/UncontrolledRating/UncontrolledRating';
 import { useState } from 'react';
-import { OnOff } from './components/OnOff/OnOffComponent';
+import { OnOff } from './components/OnOff/OnOff';
 
 
 function App() {
@@ -24,7 +24,8 @@ function App() {
 
         <Accordion titleValue="Users" 
           expanded={expanded}
-          onClick={setExpanded} />
+          onClick={setExpanded} 
+          />
       </div>
       <hr />
 

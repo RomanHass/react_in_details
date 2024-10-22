@@ -8,9 +8,11 @@ export const UncontrolledAccordion = (props: AccordionPropsType) => {
 
   const [expanded, setExpanded] = useState<boolean>(true);
 
+  const onClickHandler = () => setExpanded(!expanded)
+
   return (
     <div>
-        <AccordionTitle title={props.titleValue} onClick={() => setExpanded(!expanded)}/>
+        <AccordionTitle title={props.titleValue} onClick={onClickHandler}/>
         {/* <button onClick={() => setExpanded(!expanded)}>Toggle accordion</button> */}
         {expanded && <AccordionBody />}
       </div>

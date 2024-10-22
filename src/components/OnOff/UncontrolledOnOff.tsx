@@ -28,10 +28,13 @@ export const UncontrolledOnOff = () => {
     backgroundColor: on ? 'green' : 'red'
   }
 
+  const onClicked = () => setOn(true)
+  const offClicked = () => setOn(false)
+
   return (
     <div style={{display: 'flex', gap: '5px'}}>
-      <div onClick={() => setOn(true)} style={onStyle}>ON</div>
-      <div onClick={() => setOn(false)} style={offStyle}>OFF</div>
+      <div onClick={onClicked} style={onStyle}>ON</div>
+      <div onClick={offClicked} style={offStyle}>OFF</div>
       <div style={indicator}></div>
     </div>
   );
