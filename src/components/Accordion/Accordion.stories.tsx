@@ -38,18 +38,25 @@ export default {
 
 
 const callback = action('accordion was expanded or closed')
+const onClickcallback = action('some item was clicked')
 
 
-export const ActionAccordion = () => <Accordion titleValue="Action accordion" expanded={false} onClick={callback} />
+export const ActionAccordion = () => <Accordion titleValue="Action accordion" expanded={false} onClick={callback} items={[]} onChange={onClickcallback} />
 
 export const ExpandedAccordion = () => {
-  return <Accordion titleValue="Expanded accordion" expanded={true}  onClick={() => {}} />
+  return <Accordion titleValue="Expanded accordion" expanded={true}  onClick={() => {}} items={[{title: 'Roman', value: 1}, {title: 'Daria', value: 2}, {title: 'Tatiana', value: 3}]} onChange={onClickcallback} />
 }
 
-export const ClosedAccordion = () => <Accordion titleValue="Closed accordion" expanded={false} onClick={() => {}} />
+export const ClosedAccordion = () => <Accordion titleValue="Closed accordion" expanded={false} onClick={callback} items={[]} onChange={onClickcallback} />
 
 export const ToggleAccordion = () => {
   const [on, setOn] = useState<boolean>(true);
 
-  return <Accordion titleValue='Toggle accordion' expanded={on} onClick={setOn} />
+  return <Accordion titleValue='Toggle accordion' expanded={on} onClick={setOn} 
+          items={[
+            {title: 'Roman', value: 1}, 
+            {title: 'Daria', value: 2}, 
+            {title: 'Tatiana', value: 3}
+          ]} 
+          onChange={(value) => alert(`Person with ${value} should be happy`)} />
 }
