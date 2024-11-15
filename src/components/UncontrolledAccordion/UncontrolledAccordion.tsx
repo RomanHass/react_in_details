@@ -1,20 +1,28 @@
-import { useState } from "react"
+import { useReducer, useState } from "react"
+import { reducer } from "./reducer";
 
 type AccordionPropsType = {
   titleValue: string
 }
 
+
 export const UncontrolledAccordion = (props: AccordionPropsType) => {
+  console.log('UncontrolledAccordion rendering');
 
-  const [expanded, setExpanded] = useState<boolean>(true);
+  // const [expanded, setExpanded] = useState<boolean>(true);
 
-  const onClickHandler = () => setExpanded(!expanded)
+  const [state, dispatch] = useReducer(reducer, {expanded: true});
+
+  // const onClickHandler = () => setExpanded(!expanded)
+  const onClickHandler = () => {
+    dispatch({type: 'TOGGLE-EXPANDED'})
+}
 
   return (
     <div>
         <AccordionTitle title={props.titleValue} onClick={onClickHandler}/>
         {/* <button onClick={() => setExpanded(!expanded)}>Toggle accordion</button> */}
-        {expanded && <AccordionBody />}
+        {state.expanded && <AccordionBody />}
       </div>
   );
 }
