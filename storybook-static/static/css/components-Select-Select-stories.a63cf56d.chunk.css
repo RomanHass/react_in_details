@@ -1,0 +1,41 @@
+.select {
+  position: relative;
+  border: 2px solid orange;
+  max-width: 80px;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.select:after {
+  position: absolute;
+  content: '>';
+  width: 5px;
+  height: 5px;
+  color: green;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+}
+
+/* Поворот стрелки, когда список открыт */
+.select-opened:after {
+  transform: translateY(-50%) rotate(-90deg);
+  right: 22px;
+}
+
+.open {
+  max-width: 102px;
+  text-align: center;
+  background-color: cadetblue;
+  color: #fff;
+  border: 1px solid chocolate;
+  padding: 5px 0;
+}
+
+.close {
+  display: none;
+}
+
+
+/*# sourceMappingURL=components-Select-Select-stories.a63cf56d.chunk.css.map*/
