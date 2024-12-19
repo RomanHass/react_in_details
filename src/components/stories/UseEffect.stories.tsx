@@ -41,3 +41,49 @@ export const SimpleExample = () => {
   </>
 
 }
+
+export const SetTimeoutExample = () => {
+  const [fake, setFake] = useState(1)
+  const [counter, setCounter] = useState(1)
+
+  console.log('SetTimeoutExample');
+
+  useEffect(() => {
+
+    setInterval(() => {
+      setCounter(state => state + 1)
+    }, 1000)
+
+  }, []) 
+
+  return <>
+    Hello, counter: {counter} - fake: {fake}
+    {/* <button onClick={() => setFake(fake + 1)}>fake+</button>
+    <button onClick={() => setCounter(counter + 1)}>counter+</button> */}
+  </>
+}
+
+
+export const Counter = () => {
+  const [currentDate, setCurrentDate] = useState(new Date())
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentDate(new Date())
+    }, 1000)
+
+    return () => clearInterval(intervalId)
+
+  }, [])
+
+  const hours = currentDate.getHours().toString().padStart(2, '0')
+  const minutes = currentDate.getMinutes().toString().padStart(2, '0')
+  const seconds = currentDate.getSeconds().toString().padStart(2, '0')
+
+  return (
+    <time dateTime={`${hours}:${minutes}:${seconds}`}>
+      {hours}:{minutes}:{seconds}
+    </time>
+  )
+
+}
