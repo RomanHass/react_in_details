@@ -64,7 +64,7 @@ export const SetTimeoutExample = () => {
 }
 
 
-export const Counter = () => {
+export const Clock = () => {
   const [currentDate, setCurrentDate] = useState(new Date())
 
   useEffect(() => {
